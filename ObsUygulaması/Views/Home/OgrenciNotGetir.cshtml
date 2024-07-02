@@ -1,0 +1,57 @@
+﻿@model ObsUygulaması.Controllers.OgrenciNotViewModel
+@{
+    ViewBag.Title = "Öğrenci Notları";
+}
+
+<h2>Öğrenci Notları</h2>
+
+@if (Model != null && Model.Ogrenci != null)
+{
+    <div>
+        <h4>Öğrenci: @Model.Ogrenci.AdSoyad</h4>
+        <hr />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Ders Adı</th>
+                    <th>Vize 1</th>
+                    <th>Vize 2</th>
+                    <th>Final</th>
+                    <th>Geçti/Kaldı</th>
+                </tr>
+            </thead>
+           
+            <tbody>
+                @foreach (var not in Model.Notlar)
+                {
+                <tr>
+                    <td>@not.Ders.DersAdı</td>
+                    <td>@not.Vize1</td>
+                    <td>@not.Vize2</td>
+                    <td>@not.Final</td>
+                    <!-- <td>@not.GeçtiMiKaldiMi</td>-->
+                    <td>
+                        @if (not.GeçtiMiKaldiMi.HasValue)
+                        {
+                            if (not.GeçtiMiKaldiMi.Value)
+                            {
+                                <text>Geçti</text>
+                            }
+                            else
+                            {
+                                <text>Kaldı</text>
+                            }
+                        }
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p>Öğrenci bilgileri bulunamadı.</p>
+}
+
+@Html.ActionLink("Önceki Sayfa", "OgrenciGiris")

@@ -1,0 +1,37 @@
+﻿@model ObsUygulaması.Controllers.OgrenciDersViewModel
+@{
+    ViewBag.Title = "Öğrenci Ders Getir";
+}
+
+<h2>Öğrenci Dersleri</h2>
+
+@if (Model != null && Model.Ogrenci != null)
+{
+    <h4>Öğrenci: @Model.Ogrenci.AdSoyad</h4>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ders Id</th>
+                <th>Ders Adı</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var ders in Model.Dersler)
+            {
+                <tr>
+                    <td>@ders.Id</td>
+                    <td>@ders.DersAdı</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+else
+{
+    <p>Öğrenci bilgileri bulunamadı.</p>
+}
+
+@Html.ActionLink("Önceki Sayfa", "OgrenciGiris")

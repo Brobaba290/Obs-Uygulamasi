@@ -1,0 +1,70 @@
+﻿@model ObsUygulaması.Models.Not
+
+@{
+    ViewBag.Title = "Not Detay";
+
+    bool? geçtiMiKaldiMi = Model.GeçtiMiKaldiMi;
+    string geçtiMiKaldiMii = geçtiMiKaldiMi.HasValue ? geçtiMiKaldiMi.Value ? "Geçti" : "Kaldı" : "Kararsız";
+
+}
+
+<h2>Not Detay</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Vize 1 :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vize1)
+        </dd>
+
+        <dt>
+            Vize 2 :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vize2)
+        </dd>
+
+        <dt>
+            Final :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Final)
+        </dd>
+
+        <dt>
+            Geçti / Kaldı :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => geçtiMiKaldiMii)
+        </dd>
+
+        <dt>
+            Ders Adı :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ders.DersAdı)
+        </dd>
+
+        <dt>
+            Öğrenci Ad Soyad :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ogrenci.AdSoyad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Önceki Sayfa", "Index")
+</p>

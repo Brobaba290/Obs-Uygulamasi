@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ObsUygulaması.Models.Not>
+
+@{
+    ViewBag.Title = "Not Listele";
+}
+
+<h2>Not Listele</h2>
+
+<p>
+    @Html.ActionLink("Yeni Not Oluştur", "Create", "Nots")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Vize 1 :
+        </th>
+        <th>
+            Vize 2 :
+        </th>
+        <th>
+            Final :
+        </th>
+        <th>
+            Geçti / Kaldı :
+        </th>
+        <th>
+            Ders Adı :
+        </th>
+        <th>
+            Öğrenci Ad Soyad :
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vize1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vize2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Final)
+            </td>
+            <td>
+                @if (item.GeçtiMiKaldiMi.HasValue)
+                {
+                    if (item.GeçtiMiKaldiMi.Value)
+                    {
+                        <text>Geçti</text>
+                    }
+                    else
+                    {
+                        <text>Kaldı</text>
+                    }
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ders.DersAdı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ogrenci.AdSoyad)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", "Nots", new { id = item.Id }, null)  |
+                @Html.ActionLink("Detay", "Details", "Nots", new { id = item.Id }, null)  |
+                @Html.ActionLink("Sil", "Delete", "Nots", new { id = item.Id }, null)
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Önceki Sayfa", "AdminInfo")
+</div>

@@ -1,0 +1,35 @@
+﻿@model ObsUygulaması.Models.Ogrenci
+@{
+    ViewBag.Title = "Öğrenci Bilgileri";
+}
+
+<h2>Öğrenci Bilgileri</h2>
+
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        @if (Model != null)
+        {
+            <p>Öğrenci Adı Soyadı : @Html.DisplayFor(model => model.AdSoyad)</p>
+            <p>Öğrenci Numarası : @Html.DisplayFor(model => model.No)</p>
+            <p>Öğrenci Id : @Html.DisplayFor(model => model.Id)</p>
+            <p>Öğrenci Telefon : @Html.DisplayFor(model => model.Tel)</p>
+            <p>Öğrenci Adres : @Html.DisplayFor(model => model.Address)</p>
+            <p>Öğrenci Bölümü : @Html.DisplayFor(model => model.Bolum)</p>
+            <p>Öğrenci Mail Adresi : @Html.DisplayFor(model => model.Mail)</p>
+
+
+
+        }
+        else
+        {
+            <p> Öğrenci bilgileri bulunamadı.</p>
+        }
+        
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Önceki Sayfa", "OgrenciGiris")
+</div>

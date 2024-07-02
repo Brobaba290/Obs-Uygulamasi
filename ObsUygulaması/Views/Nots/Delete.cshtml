@@ -1,0 +1,76 @@
+﻿@model ObsUygulaması.Models.Not
+
+@{
+    ViewBag.Title = "Not Sil";
+
+    bool? geçtiMiKaldiMi = Model.GeçtiMiKaldiMi;
+    string geçtiMiKaldiMii = geçtiMiKaldiMi.HasValue ? geçtiMiKaldiMi.Value ? "Geçti" : "Kaldı" : "Kararsız";
+}
+
+<h2>Not Sil</h2>
+
+<h3>Bunu silmek istediğinizden emin misiniz?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Vize 1 :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vize1)
+        </dd>
+
+        <dt>
+            Vize 2 :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vize2)
+        </dd>
+
+        <dt>
+            Final :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Final)
+        </dd>
+
+        <dt>
+            Geçti / Kaldı :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => geçtiMiKaldiMii)
+        </dd>
+
+        <dt>
+            Ders Adı :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ders.DersAdı)
+        </dd>
+
+        <dt>
+            Öğrenci Ad Soyad :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ogrenci.AdSoyad)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Önceki Sayfa", "Index")
+        </div>
+    }
+</div>

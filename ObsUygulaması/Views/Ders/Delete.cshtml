@@ -1,0 +1,41 @@
+﻿@model ObsUygulaması.Models.Ders
+
+@{
+    ViewBag.Title = "Ders Sil";
+}
+
+<h2>Ders Sil</h2>
+
+<h3>Bunu silmek istediğinizden emin misiniz?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Ders Adı :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DersAdı)
+        </dd>
+
+        <dt>
+            Öğrenci Adı Soyad :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ogrenci.AdSoyad)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Önceki Sayfa", "Index")
+        </div>
+    }
+</div>

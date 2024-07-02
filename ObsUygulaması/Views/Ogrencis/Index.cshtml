@@ -1,0 +1,72 @@
+﻿@model IEnumerable<ObsUygulaması.Models.Ogrenci>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Öğrenciler</h2>
+
+<p>
+    @Html.ActionLink("Yeni Öğrenci Oluştur", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Ad Soyad : 
+        </th>
+        <th>
+            Öğrenci Numarası : 
+        </th>
+        <th>
+            Bölümü : 
+        </th>
+        <th>
+            Mail Adresi : 
+        </th>
+        <th>
+            Telefon Numarası : 
+        </th>
+        <th>
+            Adres : 
+        </th>
+        <th>
+            Şifre : 
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bolum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sifre)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("Önceki Sayfa", "AdminInfo", "Home")
+</div>

@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "StudentLogin";
+}
+
+<h2>StudentLogin</h2>
+
+@*@using (Html.BeginForm("StudentLogin", "Login", FormMethod.Post))
+    {
+        <label>Öğrenci Numaranız :</label>
+        <input type="text" name="OgrNo">
+        <br />
+        <label>Password:</label>
+        <input type="password" name="password">
+        <br />
+        <input type="hidden" name="userType" value="student">
+        <input type="submit" value="Login">
+    }*@
+
+<form action="@Url.Action("StudentLogin", "Login")" method="post">
+    @using (Html.BeginForm("StudentLogin", "Login", FormMethod.Post))
+    {<div class="mb-3 mt-3">
+            <label for="ogrencino" class="form-label">Öğrenci No : </label>
+            <input type="text" class="form-control " id="ogrencino" name="OgrNo">
+        </div>
+        <div class="mb-3">
+            <label for="sifre" class="form-label">Şifre</label>
+            <input type="password" class="form-control" id="sifre" name="password">
+        </div>
+        <div class="form-check mb-3">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember"> Beni Hatırla
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Giriş</button>}
+</form>

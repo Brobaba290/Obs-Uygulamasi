@@ -1,0 +1,50 @@
+﻿@model ObsUygulaması.Models.sysdiagrams
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>sysdiagrams</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.principal_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.principal_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.version)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.version)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.definition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.definition)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.diagram_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

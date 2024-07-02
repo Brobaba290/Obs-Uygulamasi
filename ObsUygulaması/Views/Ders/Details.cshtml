@@ -1,0 +1,41 @@
+﻿@model ObsUygulaması.Models.Ders
+
+@{
+    ViewBag.Title = "Ders Detay";
+}
+
+<h2>Ders Detay</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Öğrenci ID :
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ogrenci.Id)
+        </dd>
+        <dt>
+            Ders Adı :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DersAdı)
+        </dd>
+
+
+        <dt>
+            Öğrenci Ad Soyad :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ogrenci.AdSoyad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Önceki Sayfa", "Index")
+</p>

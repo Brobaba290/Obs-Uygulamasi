@@ -1,0 +1,109 @@
+﻿@model ObsUygulaması.Models.Not
+
+@{
+    ViewBag.Title = "Not Düzenle";
+}
+
+<h2>Not Düzenle</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Vize1, "Vize 1 : ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Vize1, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Vize1, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Vize2, "Vize 2 : ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Vize2, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Vize2, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Final, "Final : ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Final, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Final, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Geçti / Kaldı :</label>
+        <div class="col-md-10">
+            <label class="radio-inline">
+                @Html.RadioButtonFor(model => model.GeçtiMiKaldiMi, true) Geçti
+            </label>
+            <label class="radio-inline">
+                @Html.RadioButtonFor(model => model.GeçtiMiKaldiMi, false) Kaldı
+            </label>
+            @Html.ValidationMessageFor(model => model.GeçtiMiKaldiMi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.OgrId, "Öğrenci Numarası : ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.OgrId, ViewBag.OgrenciId as SelectList, "Öğrenci Seçiniz", new { @class = "form-control", @id = "OgrId" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Ogrenci.AdSoyad, "Öğrenci Adı : ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="text" id="OgrenciAdi" class="form-control" readonly />
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DersId, "Ders Adı : ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("DersId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.DersId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Kaydet" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Önceki Sayfa", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#OgrId").change(function() {
+                var ogrId = $(this).val();
+                if (ogrId) {
+                    $.ajax({
+                        url: '@Url.Action("GetOgrenciAdSoyad", "Ogrencis")',
+                        type: 'GET',
+                        data: { id: ogrId },
+                        success: function(data) {
+                            $("#OgrenciAdi").val(data);
+                        }
+                    });
+                } else {
+                    $("#OgrenciAdi").val('');
+                }
+            });
+        });
+    </script>
+}

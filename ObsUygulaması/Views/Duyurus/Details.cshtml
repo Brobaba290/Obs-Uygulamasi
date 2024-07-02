@@ -1,0 +1,43 @@
+﻿@model ObsUygulaması.Models.Duyuru
+
+@{
+    ViewBag.Title = "Duyuru Detay";
+}
+
+
+<h2>Duyuru Detay</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Duyuru Adı :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Baslik)
+        </dd>
+
+        <dt>
+            Açıklama :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Icerik)
+        </dd>
+
+        <dt>
+            Tarih :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tarih)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Önceki Sayfa", "Index")
+</p>

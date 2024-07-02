@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ObsUygulaması.Models.sysdiagrams>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.principal_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.version)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.definition)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.principal_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.version)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.definition)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.diagram_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.diagram_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.diagram_id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ObsUygulaması.Models.Ders>
+
+@{
+    ViewBag.Title = "Ders Listele";
+}
+
+<h2>Ders Listele</h2>
+
+<p>
+    @Html.ActionLink("Yeni Ders Oluştur", "Create", "Ders")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Ders Adı :
+        </th>
+        <th>
+            Öğrenci Ad Soyad :
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DersAdı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ogrenci.AdSoyad)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", "Ders", new { id = item.Id }, null) |
+                @Html.ActionLink("Detay", "Details", "Ders", new { id = item.Id }, null)  |
+                @Html.ActionLink("Sil", "Delete", "Ders", new { id = item.Id }, null)
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Önceki Sayfa", "AdminInfo")
+</div>

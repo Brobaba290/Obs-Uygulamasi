@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ObsUygulaması.Models.Duyuru>
+
+@{
+    ViewBag.Title = "Duyurular";
+}
+
+<h2>Duyurular</h2>
+
+<p>
+    @Html.ActionLink("Yeni Duyuru Oluştur", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Duyuru Adı :
+        </th>
+        <th>
+            Açıklama :
+        </th>
+        <th>
+            Tarih :
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Baslik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Icerik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tarih)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", "Duyurus",new { id = item.Id }, null) |
+                @Html.ActionLink("Detay", "Details", "Duyurus", new { id = item.Id }, null) |
+                @Html.ActionLink("Sil", "Delete", "Duyurus", new { id = item.Id }, null)
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Önceki Sayfa", "AdminInfo", "Home")
+</div>

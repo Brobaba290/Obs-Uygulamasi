@@ -1,0 +1,188 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Öğrenci Otomasyonu</title>
+
+
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+
+
+    <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic' rel='stylesheet' type='text/css'>
+
+
+    <link rel="stylesheet" type="text/css" href="/Web/ogrenci/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="/Web/ogrenci/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/Web/ogrenci/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/Web/ogrenci/css/responsive.css">
+
+
+</head>
+
+<body>
+
+
+
+
+
+    <!--END OF HEADER SECTION-->
+    <div class="wrapper" id="home">
+        <div class="container">
+            <div class="cd-secondary-nav">
+                <a href="#0" class="cd-secondary-nav-trigger">Menu<span></span></a>
+                <nav>
+
+
+                    <ul class="navigation">
+                        <li><a href="#">ANA SAYFA</a></li>
+                        <li><a href="/Home/OgrenciBilgileri">ÖĞRENCİ İŞLERİ</a></li>
+                        <li><a href="/Home/OgrenciDersGetir">DERS LİSTELE</a></li>
+                        <li><a href="/Home/OgrenciNotGetir">DERS NOTLARI</a></li>
+                        <li><a href="/Home/OgrenciDuyuruListele">DUYURULAR</a></li>
+
+                        <li><a href="/Home/AnaGiris">Öğrenci Çıkış Yap</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--<section>
+      <div class="container">
+      <div class="banner">
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="text-slider">
+                <ul class="bxslider">
+                  <li>
+                    <h2 class="os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s">amet conse</h2>
+                    <h4 class="os-animation" data-os-animation="fadeInLeft" data-os-animation-delay="0.5s">Lorem ipsum dolor sit amet conse vivamus turi</h4>
+                    <p class="os-animation" data-os-animation="fadeInRight" data-os-animation-delay="0.7s">Nullam malesuada erat ut turpis Suspendisse urna </p>
+                    <a href="#" class="os-animation" data-os-animation="flip" data-os-animation-delay="0.9s">lorem ipsum dlo</a> </li>
+                  <li>
+                    <h2 class="os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s">amet conse</h2>
+                    <h4 class="os-animation" data-os-animation="fadeInLeft" data-os-animation-delay="0.5s">Lorem ipsum dolor sit amet conse vivamus turi</h4>
+                    <p class="os-animation" data-os-animation="fadeInRight" data-os-animation-delay="0.7s">Nullam malesuada erat ut turpis Suspendisse urna </p>
+                    <a href="#" class="os-animation" data-os-animation="flip" data-os-animation-delay="0.9s">Read More</a> </li>
+                  <li>
+                    <h2 class="os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s">amet conse</h2>
+                    <h4 class="os-animation" data-os-animation="fadeInLeft" data-os-animation-delay="0.5s">Lorem ipsum dolor sit amet conse vivamus turi</h4>
+                    <p class="os-animation" data-os-animation="fadeInRight" data-os-animation-delay="0.7s">Nullam malesuada erat ut turpis Suspendisse urna </p>
+                    <a href="#" class="os-animation" data-os-animation="flip" data-os-animation-delay="0.9s">lorem ipsum dlo</a> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>-->
+    <!--END OF SILDER SECTION-->
+
+    <div class="wrapper" id="about">
+        <div class="container">
+            <section class="team clearfix">
+                <div class="row">
+
+                    <div class="team-title">
+                        <h3>TRAKYA ÜNİVERSİTESİ ÖĞRENCİ OTOMASYONU</h3>
+                        <p>HIZLI ERİŞİM</p>
+                        <span></span>
+                    </div>
+                    <div class="col-lg-5  col-lg-push-3 col-md-5 col-md-push-2 col-sm-4 col-xs-12" id="per">
+                        <a href="https://teknokta.trakya.edu.tr/webmail" target="_blank"><img src="/Web/ogrenci/images/web-mail.png" alt="" /> </a>
+                        <figcaption>
+                            <h4>WEB MAİL</h4>
+
+                        </figcaption>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" id="per">
+                        <a href="https://teknokta.trakya.edu.tr/alms" target="_blank"> <img src="/Web/ogrenci/images/alms.png" alt="" /></a>
+                        <figcaption>
+                            <h4>ALMS ONLİNE</h4>
+
+                        </figcaption>
+                    </div>
+                    <div class="col-lg-4 col-lg-pull-1 col-md-4 col-sm-4 col-xs-12" id="per">
+                        <a href="https://teknokta.trakya.edu.tr/kutuphane" target="_blank"><img src="/Web/ogrenci/images/library.png" alt="" /></a>
+                        <figcaption>
+                            <h4>KÜTÜPHANE</h4>
+
+                        </figcaption>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+    @model IEnumerable<ObsUygulaması.Models.Duyuru>
+
+    <!--END OF team SECTION-->
+    <section class="wrapper" id="services">
+        <div class="container">
+            <br>
+            <center><h4 style="background-color:rgb(205,0,0)">DUYURULAR</h4></center>
+            <div class="info clearfix">
+
+
+                <table class="table">
+                    <tr>
+                        <th>
+                            Duyuru Adı
+                        </th>
+                        <th>
+                            Açıklama
+                        </th>
+                        <th>
+                            Tarih
+                        </th>
+
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Baslik)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Icerik)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Tarih)
+                            </td>
+
+                        </tr>
+                    }
+
+                </table>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/Web/ogrenci/js/waypoints.min.js"></script>
+    <script src="/Web/ogrenci/js/jquery.bxslider.js"></script>
+    <script src="/Web/ogrenci/js/main.js"></script>
+    <script src="/Web/ogrenci/js/scripts.js"></script>
+    <script src="/Web/ogrenci/js/placeholders.min.js"></script>
+
+    <script type="text/javascript">
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 1) {
+                $('#sticky1').addClass("sticky");
+            }
+            else {
+                $('#sticky1').removeClass("sticky");
+            }
+        });
+    </script>
+</body>
+</html>

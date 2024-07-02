@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Öğrenci Otomasyonu</title>
+
+
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+
+
+    <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic' rel='stylesheet' type='text/css'>
+
+
+    <link rel="stylesheet" type="text/css" href="/Web/ogretmen/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="/Web/ogretmen/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/Web/ogretmen/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/Web/ogretmen/css/responsive.css">
+
+
+</head>
+
+<body>
+
+
+    <div class="wrapper" id="about">
+        <div class="container">
+            <li><a href="/Home/AnaGiris">Admin Çıkış Yap</a></li>
+            <section class="team clearfix">
+                <div class="row">
+
+                    <div class="team-title">
+                        <h3>ÖĞRETMEN PANELİ</h3>
+
+                        <span></span>
+                    </div>
+                    <div class="col-lg-5  col-lg-push-1 col-md-5 col-md-push-2 col-sm-4 col-xs-12" id="per">
+                        <a href="/Ogrencis/Create"><img src="/Web/ogretmen/images/admin.png" alt="" /> </a>
+                        <figcaption>
+                            <h4 class="col-lg-5">Öğrenci Oluştur</h4>
+
+                        </figcaption>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" id="per">
+                        <a href="/Nots/Create"> <img src="/Web/ogretmen/images/admin.png" alt="" /></a>
+                        <figcaption>
+                            <h4>NOT GİRİŞİ</h4>
+
+                        </figcaption>
+                    </div>
+                    <div class="col-lg-4 col-lg-push-1 col-md-4 col-sm-4 col-xs-12" id="per">
+                        <a href="/Duyurus/Create"><img src="/Web/ogretmen/images/admin.png" alt="" /></a>
+                        <figcaption>
+                            <h4>DUYURU GİRİŞİ</h4>
+
+                        </figcaption>
+                    </div>
+                    <div class="col-lg-4 col-lg-push-1 col-md-4 col-sm-4 col-xs-12" id="per">
+                        <a href="/Home/OgrenciListele"><img src="/Web/ogretmen/images/admin.png" alt="" /></a>
+                        <figcaption>
+                            <h4>Öğrencileri Listele</h4>
+
+                        </figcaption>
+                    </div>
+                    <div class="col-lg-4 col-lg-push-1 col-md-4 col-sm-4 col-xs-12" id="per">
+                        <a href="/Home/NotListele"><img src="/Web/ogretmen/images/admin.png" alt="" /></a>
+                        <figcaption>
+                            <h4>Notları Listele</h4>
+
+                        </figcaption>
+                    </div>
+                    <div class="col-lg-4 col-lg-push-1 col-md-4 col-sm-4 col-xs-12" id="per">
+                        <a href="/Duyurus/Index"><img src="/Web/ogretmen/images/admin.png" alt="" /></a>
+                        <figcaption>
+                            <h4>Duyuru Listele</h4>
+
+                        </figcaption>
+                    </div>
+                    <div class="col-lg-4 col-lg-push-1 col-md-4 col-sm-4 col-xs-12" id="per">
+                        <a href="/Home/DersListele"><img src="/Web/ogretmen/images/admin.png" alt="" /></a>
+                        <figcaption>
+                            <h4>Ders Listele</h4>
+
+                        </figcaption>
+                    </div>
+                    <div class="col-lg-4 col-lg-push-1 col-md-4 col-sm-4 col-xs-12" id="per">
+                        <a href="/Ders/Create"><img src="/Web/ogretmen/images/admin.png" alt="" /></a>
+                        <figcaption>
+                            <h4>Ders Ekle</h4>
+
+                        </figcaption>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/Web/ogretmen/js/waypoints.min.js"></script>
+    <script src="/Web/ogretmen/js/jquery.bxslider.js"></script>
+    <script src="/Web/ogretmen/js/main.js"></script>
+    <script src="/Web/ogretmen/js/scripts.js"></script>
+    <script src="/Web/ogretmen/js/placeholders.min.js"></script>
+
+    <script type="text/javascript">
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 1) {
+                $('#sticky1').addClass("sticky");
+            }
+            else {
+                $('#sticky1').removeClass("sticky");
+            }
+        });
+    </script>
+</body>
+</html>
